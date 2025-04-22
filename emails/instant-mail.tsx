@@ -10,7 +10,7 @@ import {
     Text,
     Hr,
     Img,
-    Link
+    Link,
 } from '@react-email/components';
 
 type TextAlignType = 'left' | 'center' | 'right' | 'justify' | 'initial' | 'inherit';
@@ -274,7 +274,7 @@ const styles = {
         fontSize: '28px',
         fontWeight: 'bold',
         margin: '0',
-        color: '#2563eb', // Blue
+        color: '#2563eb',
     },
     summaryLabel: {
         fontSize: '14px',
