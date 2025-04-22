@@ -31,7 +31,9 @@ export const QuizReportEmail = ({
         score: "0%"
     },
     questionsData = [
-        { id: "SM3 L5B Q1", points1stTry: "-", pointsRetries: "-", additionalTries: "-", status: "Skipped", reference: "" },
+        {
+            id: "SM3 L5B Q1", points1stTry: "-", pointsRetries: "-", additionalTries: "-", status: "Skipped", reference: `If you
+              were not expecting this invitation, you can ignore this email.` },
         { id: "SM3 L5B Q2", points1stTry: "-", pointsRetries: "-", additionalTries: "-", status: "Skipped", reference: "" },
         { id: "SM3 L5B Q3", points1stTry: "-", pointsRetries: "-", additionalTries: "-", status: "Skipped", reference: "" },
         { id: "SM3 L5B Q4", points1stTry: "-", pointsRetries: "-", additionalTries: "-", status: "Skipped", reference: "" },
