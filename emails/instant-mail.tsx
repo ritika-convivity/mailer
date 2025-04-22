@@ -59,14 +59,14 @@ export const QuizReportEmail = ({
         <Html>
             <Head />
             <Body style={styles.body}>
-                {/* Header */}
+
                 <Section style={styles.header}>
                     <Row>
-                        <Column>
+                        <Column style={{ width: '80px' }}>
                             <Img
                                 src="https://your-domain.com/logo.png"
-                                width="60"
-                                height="60"
+                                width="40"
+                                height="40"
                                 alt="Nicole the Math Lady"
                                 style={styles.logo}
                             />
@@ -80,7 +80,7 @@ export const QuizReportEmail = ({
                 <Container style={styles.container}>
                     {/* Title Section */}
                     <Section style={styles.titleSection}>
-                        <Heading as="h1" style={styles.title}>Quiz Report for {studentName}</Heading>
+                        <Heading as="h2" style={styles.title}>Quiz Report for {studentName}</Heading>
                         <Text style={styles.subtitle}>{lessonTitle} • {dateCompleted}</Text>
                     </Section>
 
@@ -167,25 +167,58 @@ export const QuizReportEmail = ({
                         </Row>
 
                         {/* Table Body */}
-                        {questionsData.map((question, index) => (
+                        {/* {questionsData.map((question, index) => (
                             <Row key={index} style={index % 2 === 0 ? styles.tableRowEven : styles.tableRowOdd}>
                                 <Column style={styles.td}>{question.id}</Column>
                                 <Column style={styles.td}>{question.points1stTry}</Column>
                                 <Column style={styles.td}>{question.pointsRetries}</Column>
                                 <Column style={styles.td}>{question.additionalTries}</Column>
-                                <Column style={styles.td}>
-                                    <Text style={{
-                                        ...styles.statusBadge,
-                                        ...getStatusStyle(question.status),
-                                        margin: 0
-                                    }}>
-                                        {question.status}
-                                    </Text>
+                                <Column style={{ ...styles.td, color: '#f59e0b', fontSize: '10px' }}>
+                                    {question.status}
                                 </Column>
-                                <Column style={styles.td}>{question.reference}</Column>
+                                <Column style={{
+                                    ...styles.td,
+                                    width: '10px', fontSize: '10px'
+                                }}>{question.reference}</Column>
                             </Row>
-                        ))}
-
+                        ))} */}
+                        <Row style={{ width: '100%' }}>
+                            <Column style={styles.td}>SM3 L5B Q1</Column>
+                            <Column style={styles.td}></Column>
+                            <Column style={styles.td}>-</Column>
+                            <Column style={styles.td}>-</Column>
+                            <Column style={{ ...styles.td, color: '#f59e0b' }}>
+                                Skipped
+                            </Column>
+                            <Column style={{
+                                ...styles.td
+                            }}>If you
+                                were not expecting this invitation, you can ignore this email.</Column>
+                        </Row>
+                        <Row style={{ width: '100%' }}>
+                            <Column style={styles.td}>SM3 L5B Q2</Column>
+                            <Column style={styles.td}></Column>
+                            <Column style={styles.td}>-</Column>
+                            <Column style={styles.td}>-</Column>
+                            <Column style={{ ...styles.td, color: '#f59e0b' }}>
+                                Skipped
+                            </Column>
+                            <Column style={{
+                                ...styles.td
+                            }}>If you
+                                were not expecting this invitation, you can ignore this email.</Column>
+                        </Row>
+                        <Row style={{ width: '100%' }}>
+                            <Column style={styles.td}>SM3 L5B Q3</Column>
+                            <Column style={styles.td}></Column>
+                            <Column style={styles.td}>-</Column>
+                            <Column style={styles.td}>-</Column>
+                            <Column style={{ ...styles.td, color: '#f59e0b' }}>
+                                Skipped
+                            </Column>
+                            <Column style={styles.td}>If you
+                                were not expecting this invitation, you can ignore this email.</Column>
+                        </Row>
                         <Row style={styles.tableTotals}>
                             <Column style={styles.tdBold}>Total</Column>
                             <Column style={styles.td}>{summaryData.score}</Column>
@@ -218,7 +251,6 @@ export const QuizReportEmail = ({
 
 export default QuizReportEmail;
 
-// Styles with proper typing
 const styles = {
     body: {
         backgroundColor: '#f5f5f5',
@@ -231,8 +263,8 @@ const styles = {
         margin: '0 auto',
     },
     header: {
-        backgroundColor: '#6b21a8',
-        padding: '20px',
+        backgroundColor: '#a855f7',
+        padding: '18px',
         color: '#ffffff',
     },
     logo: {
@@ -242,7 +274,7 @@ const styles = {
     },
     headerText: {
         fontSize: '24px',
-        fontWeight: 'bold',
+        fontWeight: '600',
         margin: '0',
         color: '#ffffff',
     },
@@ -300,6 +332,7 @@ const styles = {
         color: '#333333',
         borderBottom: '1px solid #e5e5e5',
         fontSize: '14px',
+        width: '16.6666%'
     },
     tableRowEven: {
         backgroundColor: '#f9fafb',
@@ -311,6 +344,8 @@ const styles = {
         padding: '12px',
         borderBottom: '1px solid #e5e5e5',
         color: '#333333',
+        width: '16.6666%',
+        fontSize: '12px'
     },
     tdBold: {
         padding: '12px',
@@ -338,7 +373,7 @@ const styles = {
         margin: '15px 0 0',
     },
     link: {
-        color: '#6b21a8', // Purple
+        color: '#6b21a8',
         textDecoration: 'underline',
     },
 };
